@@ -7,6 +7,7 @@ import * as Joi from 'joi';
 import { DatabaseModule } from './common/database/database.module';
 import { UsersModule } from './users/users.module';
 import { LoggerModule } from 'nestjs-pino';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -42,6 +43,7 @@ import { LoggerModule } from 'nestjs-pino';
       },
       inject: [ConfigService],
     }),
+    AuthModule,
   ],
   controllers: [],
   providers: [],
