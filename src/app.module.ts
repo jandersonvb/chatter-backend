@@ -9,10 +9,12 @@ import { UsersModule } from './users/users.module';
 import { LoggerModule } from 'nestjs-pino';
 import { AuthModule } from './auth/auth.module';
 
+
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: ['.env'],
       validationSchema: Joi.object({
         MONGODB_URI: Joi.string().required(),
       }),
