@@ -12,6 +12,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe()); // Middleware to validate requests
   app.useLogger(app.get(Logger)) // Middleware to log requests
   app.use(cookieParser()); // Middleware to parse cookies
+  app.enableCors({ origin: true, credentials: true }); // Middleware to enable CORS
 
   const configService = app.get(ConfigService)
 
