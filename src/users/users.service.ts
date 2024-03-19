@@ -14,7 +14,7 @@ export class UsersService {
 
   async create(createUserInput: CreateUserInput) {
     try {
-      return this.usersRepository.create({
+      return await this.usersRepository.create({
         ...createUserInput,
         password: await this.hashPassword(createUserInput.password)
       })
