@@ -37,4 +37,11 @@ export class AuthService {
     });
 
   }
+
+  async logout(response: Response) {
+    response.cookie('Authentication', '', {
+      expires: new Date(0),
+      httpOnly: true
+    });
+  }
 }
